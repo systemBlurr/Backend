@@ -7,5 +7,6 @@ LeavesRouter.post('/leaves', LeavesController.upsertLeaves);
 LeavesRouter.post('/leaves/:id', LeavesController.upsertLeaves);
 LeavesRouter.delete('/leaves/:id', LeavesController.deleteLeaves);
 
+
 export default LeavesRouter
 
