@@ -19,6 +19,8 @@ import CompanyRouter from "./Routes/CompanyRoute.js";
 import DeviceRouter from "./Routes/DeviceRoute.js";
 import employeeRoutes from "./Routes/EmployeeRoute.js";
 import AttendanceRouter from "./Routes/AttendanceRoute.js";
+import roleRouter from "./Routes/RolesRoute.js";
+import DepartmentRouter from "./Routes/DepartmentRoute.js";
 dotenv.config();
 
 const app = express();
@@ -39,18 +41,19 @@ app.use('/public', publicRouter)
 app.use('/production', productionRouter)
 app.use('/material', materialsRouter)
 app.use('/report', reportRouter)
-app.use('/business',businessRouter)
-app.use('/company',CompanyRouter)
+app.use('/business', businessRouter)
+app.use('/company', CompanyRouter)
 app.use('/device', DeviceRouter);
 app.use('/employee', employeeRoutes);
 app.use('/attendance', AttendanceRouter);
-
+app.use('/role', roleRouter);
+app.use('/department', DepartmentRouter);
 
 app.use(express.static('upload_data'));
 
-app.get('/helth-check', (req, res) =>{res.send("Helth check done")})
-app.get('/', (req, res) =>{res.send("Hello Surya")})
+app.get('/helth-check', (req, res) => { res.send("Helth check done") })
+app.get('/', (req, res) => { res.send("Hello Surya") })
 
-app.listen(PORT, () =>{
+app.listen(PORT, () => {
     console.log("Server is runing is port", PORT)
 })
